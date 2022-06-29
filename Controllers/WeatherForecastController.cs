@@ -26,7 +26,20 @@ namespace LoggingLevelSample.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogCritical("Log Critical");
+
+            _logger.LogError("Log Error");
+
+            _logger.LogWarning("Log Warning");
+
+            _logger.LogInformation("Log Information");
+
+            _logger.LogDebug("Log Debug");
+
+            _logger.LogTrace("Log Trace");
+
             var rng = new Random();
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

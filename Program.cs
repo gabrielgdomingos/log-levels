@@ -21,6 +21,12 @@ namespace LoggingLevelSample
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            //.ConfigureLogging(logging =>
+            //{
+            //    logging.ClearProviders(); // Remove todos os provedores de log (Console, Debug, etc.) que são adiciona por padrão.
+            //    logging.AddConsole(); // Adiciona somente o provedor de log Console
+            //})
+                ;
     }
 }
